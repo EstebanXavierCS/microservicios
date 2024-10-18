@@ -16,4 +16,4 @@ Antes de usar el repositorio
 
 Cuando se suban los cambios
 
-    git push origin feature-nombre-rama
+    git push origin main
