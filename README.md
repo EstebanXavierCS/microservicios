@@ -2,14 +2,18 @@
 
 Trabajar en el Repositorio
 
-$ git clone https://github.com/EverAlon/Sheksa.git
-$ git remote -v
-$ git remote add upstream https://github.com/EverAlon/Sheksa.git
-(Forkeado)
-$ git remote -v
+    git clone https://github.com/EstebanXavierCS/microservicios.git
+Siguiente comando
 
-siempre antes de empezar o usar el repositorio usa este
-$ git pull -r upstream main 
+    git remote -v
+
+    git remote add upstream https://github.com/EstebanXavierCS/microservicios.git
+
+
+Antes de usar el repositorio
+
+    git pull -r upstream main 
 
 Cuando se suban los cambios
-$ git push origin feature-nombre-rama
+
+    git push origin feature-nombre-rama
