@@ -7,17 +7,17 @@ const server = gateway({
     routes: [
         {
             prefix: '/auth',
-            target: 'http://localhost:8080/',  // Servicio de autenticación
+            target: 'https://auth-n1vi.onrender.com/',  // Servicio de autenticación
             hooks: {}
         },
         {
             prefix: '/',  // Página inicio
-            target: 'http://localhost:9002',  // Servicio de la página inicio
+            target: 'https://inicio-kppi.onrender.com',  // Servicio de la página inicio
             hooks: {}
         },
         {
             prefix: '/pagina',
-            target: 'http://localhost:8081',  // Servicio de muestra
+            target: 'https://principal-lqck.onrender.com',  // Servicio de muestra
             hooks: {}
         }
     ]
