@@ -16,6 +16,6 @@ Actualizar el repositorio
 
     git pull -r upstream main 
 
-Cuando se suban los cambios
+Cuando se suban los cambios (Omitir este)
 
     git push origin main
