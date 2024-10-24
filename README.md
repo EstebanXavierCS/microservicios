@@ -10,7 +10,7 @@ Siguiente comando
     git remote add upstream https://github.com/EstebanXavierCS/microservicios.git
 
 
-Antes de usar el repositorio
+Actualizar el repositorio
 
     git pull -r upstream main 
 
