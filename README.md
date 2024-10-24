@@ -3,9 +3,11 @@
 Trabajar en el Repositorio
 
     git clone https://github.com/EstebanXavierCS/microservicios.git
-Siguiente comando
+Trabajar de Forma Remota
 
     git remote -v
+
+Siguiente Comando
 
     git remote add upstream https://github.com/EstebanXavierCS/microservicios.git
 
