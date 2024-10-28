@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
+    <link rel="stylesheet" href="/principal/css/principal.css"> 
 </head>
 <body>
     <h1>Bienvenido a Principal</h1>
@@ -17,31 +18,35 @@
     </form>
 
     <h2>Lista de canciones</h2>
-    <div>
+    <div style="width: 100%; max-width: 400px;"> 
         <% items.forEach(item => { %>
             <div class="card">
                 <h3><%= item.songName %></h3>
                 <p>Artista: <%= item.artistName %></p>
-                <img src="<%= item.coverUrl %>" alt="<%= item.songName %> Cover" style="width:100px;height:auto;">
-                <form action="/pagina/delete-item/<%= item.id %>" method="POST" style="display:inline;">
-                    <button type="submit">Eliminar</button>
-                </form>
-                <a href="/pagina/edit-item/<%= item.id %>">
-                    <button type="button">Editar</button>
-                </a>
+                <img src="<%= item.coverUrl %>" alt="<%= item.songName %> Cover">
+                <div class="button-container">
+                    <form action="/pagina/delete-item/<%= item.id %>" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                    <a href="/pagina/edit-item/<%= item.id %>">
+                        <button type="button">Editar</button>
+                    </a>
+                </div>
             </div>
         <% }) %>
     </div>
 
-    <!-- Botón para ir a la página de inicio -->
-    <a href="/">
-        <button type="button">Inicio</button>
-    </a>
+    <div class="nav-buttons">
+        <a href="/">
+            <button type="button">Inicio</button>
+        </a>
+        <a href="/auth/login">
+            <button type="button">Atrás</button>
+        </a>
+    </div>
 
-    <!-- Botón para ir a otra ruta asignada -->
-    <a href="/auth/login"> <!-- Cambia "/otra-ruta" por la ruta que desees -->
-        <button type="button">Atrás</button>
-    </a>
-    
+    <footer>
+        &copy; 2024 Tu Aplicación de Música
+    </footer>
 </body>
 </html>
