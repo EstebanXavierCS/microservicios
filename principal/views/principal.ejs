@@ -4,49 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
-    <link rel="stylesheet" href="/principal/css/principal.css"> 
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Bienvenido a Principal</h1>
+<body class="bg-light">
 
-    <h2>Agregar nueva canción</h2>
-    <form action="/pagina/add-item" method="POST">
-        <input type="text" name="songName" placeholder="Nombre de la canción" required>
-        <input type="text" name="artistName" placeholder="Nombre del artista" required>
-        <input type="text" name="coverUrl" placeholder="URL de la carátula" required>
-        <button type="submit">Agregar</button>
-    </form>
+    <!-- Header -->
+    <div class="container mt-5 text-center">
+        <h1 class="display-4" style="color: #b22222;">Bienvenido a Principal</h1>
+    </div>
 
-    <h2>Lista de canciones</h2>
-    <div style="width: 100%; max-width: 400px;"> 
-        <% items.forEach(item => { %>
-            <div class="card">
-                <h3><%= item.songName %></h3>
-                <p>Artista: <%= item.artistName %></p>
-                <img src="<%= item.coverUrl %>" alt="<%= item.songName %> Cover">
-                <div class="button-container">
-                    <form action="/pagina/delete-item/<%= item.id %>" method="POST">
-                        <button type="submit">Eliminar</button>
-                    </form>
-                    <a href="/pagina/edit-item/<%= item.id %>">
-                        <button type="button">Editar</button>
-                    </a>
-                </div>
+    <!-- Formulario de Agregar Nueva Canción -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4" style="color: #b22222;">Agregar nueva canción</h2>
+        <form action="/pagina/add-item" method="POST" class="mx-auto" style="max-width: 600px;">
+            <div class="form-group">
+                <input type="text" name="songName" class="form-control" placeholder="Nombre de la canción" required>
             </div>
-        <% }) %>
+            <div class="form-group">
+                <input type="text" name="artistName" class="form-control" placeholder="Nombre del artista" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="coverUrl" class="form-control" placeholder="URL de la carátula" required>
+            </div>
+            <button type="submit" class="btn btn-danger btn-block">Agregar</button>
+        </form>
     </div>
 
-    <div class="nav-buttons">
-        <a href="/">
-            <button type="button">Inicio</button>
-        </a>
-        <a href="/auth/login">
-            <button type="button">Atrás</button>
-        </a>
+    <!-- Lista de Canciones -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4" style="color: #b22222;">Lista de canciones</h2>
+        <div class="row">
+            <% items.forEach(item => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="<%= item.coverUrl %>" class="card-img-top" alt="<%= item.songName %> Cover" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.songName %></h5>
+                            <p class="card-text">Artista: <%= item.artistName %></p>
+                            <div class="d-flex justify-content-between">
+                                <form action="/pagina/delete-item/<%= item.id %>" method="POST">
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                                <a href="/pagina/edit-item/<%= item.id %>" class="btn btn-warning">Editar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
     </div>
 
-    <footer>
-        &copy; 2024 Tu Aplicación de Música
-    </footer>
+    <!-- Botones de Navegación -->
+    <div class="container text-center my-4">
+        <a href="/" class="btn btn-secondary mr-2">Inicio</a>
+        <a href="/auth/login" class="btn btn-secondary">Atrás</a>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
